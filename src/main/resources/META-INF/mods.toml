@@ -2,7 +2,7 @@
 #loaderVersion="[36,)" 
 modLoader="kotlinforforge"
 # Change this if you require a certain version of KotlinForForge
-loaderVersion="[2,)"
+loaderVersion="[1.14, 2)"
 
 license="MIT"
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
