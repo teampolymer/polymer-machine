@@ -1,5 +1,6 @@
 package com.polymerteam.polymermachine
 
+import com.polymerteam.polymermachine.api.PolymerMachineApi
 import com.polymerteam.polymermachine.common.block.ModBlocks
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -10,9 +11,8 @@ import org.apache.logging.log4j.Logger
 import thedarkcolour.kotlinforforge.forge.FORGE_BUS
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
-@Mod(PolymerMachine.MOD_ID)
+@Mod(PolymerMachineApi.MOD_ID)
 object PolymerMachine {
-    const val MOD_ID: String = "polymer-machine"
 
     private val LOG: Logger = LogManager.getLogger()
 
