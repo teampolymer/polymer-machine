@@ -12,7 +12,6 @@ import net.minecraft.world.Explosion
 import net.minecraft.world.World
 
 class KotlinTestBlock : Block(newProperties(Material.STONE) {
-
 }) {
 
 

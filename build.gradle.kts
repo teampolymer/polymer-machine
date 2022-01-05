@@ -16,8 +16,8 @@ buildscript {
     }
 }
 plugins {
-    kotlin("jvm") version "1.5.21"
-    kotlin("plugin.serialization") version "1.5.21"
+    kotlin("jvm") version "1.5.31"
+    kotlin("plugin.serialization") version "1.5.31"
 }
 
 apply {
@@ -47,7 +47,6 @@ println(
 
 configure<UserDevExtension> {
     mappings("official", "1.16.5")
-
 //    accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
     runs {
         val runConfig = Action<RunConfig> {
@@ -59,13 +58,15 @@ configure<UserDevExtension> {
             // "REGISTRYDUMP": For getting the contents of all registries.
             property("forge.logging.markers", "REGISTRIES")
             property("forge.logging.console.level", "debug")
+            property("mixin.env.remapRefMap", "true")
+            property("mixin.env.refMapRemappingFile", "${projectDir}/build/createSrgToMcp/output.srg")
+
             mods {
                 create("polymermachine") {
                     source(sourceSets["main"])
                 }
             }
         }
-
         create("client", runConfig)
         create("server", runConfig)
         create("data") {
@@ -96,6 +97,21 @@ repositories {
         url = uri("https://thedarkcolour.github.io/KotlinForForge/")
     }
 
+    maven {
+        name = "Blamejard Maven"
+        url = uri("https://maven.blamejared.com")
+    }
+
+    maven {
+        // Shedaniel's maven (Architectury API)
+        url = uri("https://maven.architectury.dev")
+    }
+
+    maven {
+        // saps.dev Maven (KubeJS and Rhino)
+        url = uri("https://maven.saps.dev/minecraft")
+    }
+
     flatDir {
         dir("libs")
     }
@@ -107,10 +123,15 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     "minecraft"("net.minecraftforge:forge:1.16.5-36.2.9")
     // Use the latest version of KotlinForForge
-    implementation("thedarkcolour:kotlinforforge:1.14.0")
-
+    implementation("thedarkcolour:kotlinforforge:1.16.0")
     val fg = project.extensions.getByType<DependencyManagementExtension>()
 
+    implementation(fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.5:${properties["crafttweaker_version"]}"))
+    implementation(fg.deobf("dev.latvian.mods:kubejs-forge:${properties["kubejs_version"]}"))
+
+    // these two are unfortunately needed since fg.deobf doesn't respect transitive dependencies as of yet
+    implementation(fg.deobf("dev.latvian.mods:rhino-forge:${properties["rhino_version"]}"))
+    implementation(fg.deobf("me.shedaniel:architectury-forge:${properties["architectury_version"]}"))
 
 }
 

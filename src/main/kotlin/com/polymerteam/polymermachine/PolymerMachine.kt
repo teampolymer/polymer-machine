@@ -2,6 +2,7 @@ package com.polymerteam.polymermachine
 
 import com.polymerteam.polymermachine.api.PolymerMachineApi
 import com.polymerteam.polymermachine.common.block.ModBlocks
+import net.minecraft.client.resources.I18n
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent
@@ -34,6 +35,7 @@ object PolymerMachine {
      */
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOG.log(Level.INFO, "Initializing client...")
+
     }
 
     /**
