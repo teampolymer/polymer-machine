@@ -1,5 +1,6 @@
-package com.polymerteam.polymermachine.api.scripting.kts
+package com.polymerteam.polymermachine.common.scripting.kts
 
+import com.polymerteam.polymermachine.common.scripting.util.forgeContextClasspath
 import org.apache.logging.log4j.LogManager
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -10,6 +11,8 @@ import kotlin.script.experimental.api.ResultWithDiagnostics
 import kotlin.script.experimental.api.onSuccess
 import kotlin.script.experimental.api.plus
 import kotlin.script.experimental.host.toScriptSource
+import kotlin.script.experimental.jvm.jvm
+import kotlin.script.experimental.jvm.updateClasspath
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 import kotlin.script.experimental.jvmhost.createJvmScriptDefinitionFromTemplate
 
@@ -30,7 +33,13 @@ class KtsScriptLoader {
             .filter { it.isFile && it.name.endsWith(".kts") }
             .map { it.toScriptSource() }
         val configuration =
-            createJvmScriptDefinitionFromTemplate<MachineScript>()
+            createJvmScriptDefinitionFromTemplate<MachineScript>(compilation = {
+
+//    defaultImports(DependsOn::class, Repository::class)
+                jvm {
+                    updateClasspath(forgeContextClasspath())
+                }
+            })
 
         val host = BasicJvmScriptingHost()
 

@@ -1,8 +1,8 @@
 package com.polymerteam.polymermachine
 
 import com.polymerteam.polymermachine.api.PolymerMachineApi
-import com.polymerteam.polymermachine.api.scripting.kts.KtsScriptLoader
 import com.polymerteam.polymermachine.common.block.ModBlocks
+import com.polymerteam.polymermachine.common.scripting.kts.KtsScriptLoader
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent
