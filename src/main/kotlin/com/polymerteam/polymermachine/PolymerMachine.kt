@@ -1,6 +1,7 @@
 package com.polymerteam.polymermachine
 
 import com.polymerteam.polymermachine.api.PolymerMachineApi
+import com.polymerteam.polymermachine.api.scripting.kts.KtsScriptLoader
 import com.polymerteam.polymermachine.common.block.ModBlocks
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -25,6 +26,8 @@ object PolymerMachine {
         // usage of the KotlinEventBus
         MOD_BUS.addListener(::onClientSetup)
         FORGE_BUS.addListener(::onServerAboutToStart)
+
+        KtsScriptLoader().load()
     }
 
     /**

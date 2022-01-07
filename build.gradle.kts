@@ -109,6 +109,12 @@ dependencies {
     // Use the latest version of KotlinForForge
     implementation("thedarkcolour:kotlinforforge:1.14.0")
 
+    implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.6.10")
+    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.10")
+    implementation("org.jetbrains.kotlin:kotlin-scripting-dependencies:1.6.10")
+    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.10")
+
+
     val fg = project.extensions.getByType<DependencyManagementExtension>()
 
 
