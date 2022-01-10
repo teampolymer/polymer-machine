@@ -1,11 +1,11 @@
 package com.polymerteam.polymermachine.common.recipe
 
+import com.polymerteam.polymermachine.api.recipe.IngredientWithAmount
 import com.polymerteam.polymermachine.common.utils.Graph
 import net.minecraft.inventory.IInventory
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.ItemStack
 import net.minecraft.item.crafting.Ingredient
-import kotlin.math.min
 
 
 fun matchRecipe(recipe: Array<IngredientWithAmount>, inputInventory: Inventory): MutableList<RecipeMatchResult>? {
