@@ -37,13 +37,6 @@ java {
         languageVersion.set(JavaLanguageVersion.of(8))
     }
 }
-
-kotlin {
-    jvmToolchain {
-        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(8)) // "8"
-    }
-}
-
 println(
     "Java: ${System.getProperty("java.version")} " +
             "JVM:  ${System.getProperty("java.vm.version")}(${System.getProperty("java.vendor")}) " +
