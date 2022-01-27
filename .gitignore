@@ -1,12 +1,26 @@
-*
-# WhiteList
-!gradle/*
-!src/*
-!.gitignore
-!.gitattributes
-!build.gradle.kts
-!gradle.properties
-!gradlew
-!gradlew.bat
-!LICENSE
-!README.md
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt
+/sources/

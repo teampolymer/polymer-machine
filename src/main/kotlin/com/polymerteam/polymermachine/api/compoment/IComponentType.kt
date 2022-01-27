@@ -7,6 +7,9 @@ interface IComponentType<T> {
     @Suppress("UNCHECKED_CAST")
     fun cast(obj: Any): T = obj as T
 
+    fun validate(vararg components: IComponent<T>) = components.all { validate(it.type) }
+    fun validate(other: IComponentType<T>) = this.type.isAssignableFrom(other.type)
+
     val type: Class<T>
 
     /**
