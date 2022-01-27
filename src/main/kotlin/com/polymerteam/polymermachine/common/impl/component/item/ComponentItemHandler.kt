@@ -1,39 +1,52 @@
 package com.polymerteam.polymermachine.common.impl.component.item
 
-import com.polymerteam.polymermachine.api.compoment.IComponent
-import com.polymerteam.polymermachine.api.compoment.IComponentType
 import com.polymerteam.polymermachine.api.compoment.IConcreteComponent
-import com.polymerteam.polymermachine.api.network.IComponentNetHandler
+import com.polymerteam.polymermachine.common.impl.component.common.AbstractComponent
+import net.minecraft.inventory.InventoryHelper
 import net.minecraft.nbt.CompoundNBT
 import net.minecraft.nbt.INBT
 import net.minecraftforge.items.IItemHandler
+import net.minecraftforge.items.ItemStackHandler
 
-class ComponentItemHandler(
-    override val handler: IItemHandler?,
-    override val type: IComponentType<IItemHandler>,
-    override val network: IComponentNetHandler
-) : IConcreteComponent<IItemHandler> {
+class ComponentItemHandler(var size: Int) : AbstractComponent<IItemHandler>(), IComponentItemHandler,
+    IConcreteComponent<IItemHandler> {
+    private var handlerInstance: ItemStackHandler? = null
+    override val handler: IItemHandler
+        get() {
+            if (handlerInstance == null) {
+                createHandler()
+            }
+            return handlerInstance!!
+        }
+
+
     override fun createHandler(): IItemHandler {
-        TODO("Not yet implemented")
+        handlerInstance = ItemStackHandler(size)
+        return handlerInstance!!
     }
 
     override fun destroyHandler(drop: Boolean) {
-        TODO("Not yet implemented")
+        if (drop) attachedTile.get()?.let {
+            if (it.level != null && handlerInstance != null) {
+                (0 until handler.slots).forEach { i ->
+                    InventoryHelper.dropItemStack(
+                        it.level!!,
+                        it.blockPos.x.toDouble(),
+                        it.blockPos.y.toDouble(),
+                        it.blockPos.z.toDouble(),
+                        handler.getStackInSlot(i)
+                    )
+                }
+            }
+        }
     }
 
-    override fun serializeContent(): INBT {
-        TODO("Not yet implemented")
+    override fun serializeNBT(): INBT {
+        return handlerInstance?.serializeNBT() ?: CompoundNBT()
     }
 
-    override fun deserializeContent(nbt: INBT?) {
-        TODO("Not yet implemented")
+    override fun deserializeNBT(nbt: INBT) {
+        handlerInstance?.deserializeNBT(nbt as CompoundNBT)
     }
 
-    override fun serializeNBT(): CompoundNBT {
-        TODO("Not yet implemented")
-    }
-
-    override fun deserializeNBT(nbt: CompoundNBT?) {
-        TODO("Not yet implemented")
-    }
 }
