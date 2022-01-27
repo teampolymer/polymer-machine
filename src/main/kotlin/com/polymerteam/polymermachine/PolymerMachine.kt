@@ -2,9 +2,11 @@ package com.polymerteam.polymermachine
 
 import com.polymerteam.polymermachine.api.PolymerMachineApi
 import com.polymerteam.polymermachine.common.block.ModBlocks
+import com.polymerteam.polymermachine.common.item.ModItems
 import com.polymerteam.polymermachine.common.scripting.kts.KtsScriptLoader
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
+import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent
 import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
@@ -22,12 +24,17 @@ object PolymerMachine {
 
         // Register the KDeferredRegister to the mod-specific event bus
         ModBlocks.REGISTRY.register(MOD_BUS)
+        ModItems.REGISTRY.register(MOD_BUS)
 
         // usage of the KotlinEventBus
         MOD_BUS.addListener(::onClientSetup)
         FORGE_BUS.addListener(::onServerAboutToStart)
 
         KtsScriptLoader().load()
+    }
+
+    fun processIMC(event: InterModProcessEvent) {
+
     }
 
     /**

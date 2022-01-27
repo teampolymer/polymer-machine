@@ -1,6 +1,6 @@
 package com.polymerteam.polymermachine.api.recipe
 
-import com.polymerteam.polymermachine.common.recipe.Graph
+import com.polymerteam.polymermachine.common.utils.Graph
 import kotlin.system.measureNanoTime
 import kotlin.system.measureTimeMillis
 

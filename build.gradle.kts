@@ -104,9 +104,10 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    "minecraft"("net.minecraftforge:forge:1.16.5-36.2.9")
+    "minecraft"("net.minecraftforge:forge:1.16.5-36.2.20")
     // Use the latest version of KotlinForForge
     implementation("thedarkcolour:kotlinforforge:1.14.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.10")
 
     implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.6.10")
     implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.10")
