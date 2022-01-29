@@ -1,13 +1,10 @@
 package com.teampolymer.polymer.machine.common.impl.component.remote
 
-import com.polymerteam.polymermachine.api.capability.COMPONENT_HOLDER
-import com.polymerteam.polymermachine.api.compoment.IComponent
-import com.polymerteam.polymermachine.api.compoment.IComponentType
-import com.polymerteam.polymermachine.api.compoment.ILazyComponent
-import com.polymerteam.polymermachine.api.compoment.IRemoteComponent
-import com.polymerteam.polymermachine.api.network.IComponentNetHandler
-import com.polymerteam.polymermachine.common.impl.component.common.AbstractComponent
-import net.minecraft.nbt.CompoundNBT
+import com.teampolymer.polymer.machine.api.compoment.IComponentType
+import com.teampolymer.polymer.machine.api.compoment.ILazyComponent
+import com.teampolymer.polymer.machine.api.compoment.IRemoteComponent
+import com.teampolymer.polymer.machine.api.network.IComponentNetHandler
+import com.teampolymer.polymer.machine.common.impl.component.common.AbstractComponent
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.math.BlockPos
 import java.util.function.Consumer

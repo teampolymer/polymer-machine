@@ -1,6 +1,6 @@
 package com.teampolymer.polymer.machine.api.capability
 
-import com.polymerteam.polymermachine.api.compoment.IComponentHolder
+import com.teampolymer.polymer.machine.api.compoment.IComponentHolder
 import net.minecraft.nbt.INBT
 import net.minecraft.util.Direction
 import net.minecraftforge.common.capabilities.Capability

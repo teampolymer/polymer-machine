@@ -1,6 +1,6 @@
 package com.teampolymer.polymer.machine.common.impl.component.item
 
-import com.polymerteam.polymermachine.api.compoment.*
+import com.teampolymer.polymer.machine.api.compoment.*
 import net.minecraftforge.items.IItemHandler
 
 object ComponentTypeItemHandler : IComponentTypeCombinable<IItemHandler> {

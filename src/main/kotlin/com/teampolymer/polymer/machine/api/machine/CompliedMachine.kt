@@ -1,6 +1,6 @@
 package com.teampolymer.polymer.machine.api.machine
 
-import com.polymerteam.polymermachine.api.context.MachineContext
+import com.teampolymer.polymer.machine.api.context.MachineContext
 import net.minecraft.block.Block
 
 interface CompliedMachine {

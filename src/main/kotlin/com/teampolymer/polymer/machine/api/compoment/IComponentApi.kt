@@ -1,7 +1,5 @@
 package com.teampolymer.polymer.machine.api.compoment
 
-import com.teampolymer.polymer.machine.api.block.IBlockBuilder
-
 /**
  * 代表一个组件的api
  */

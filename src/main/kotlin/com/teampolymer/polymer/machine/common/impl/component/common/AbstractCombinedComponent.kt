@@ -1,8 +1,8 @@
 package com.teampolymer.polymer.machine.common.impl.component.common
 
-import com.polymerteam.polymermachine.api.compoment.ICombinedComponent
-import com.polymerteam.polymermachine.api.compoment.IComponent
-import com.polymerteam.polymermachine.api.compoment.ILazyComponent
+import com.teampolymer.polymer.machine.api.compoment.ICombinedComponent
+import com.teampolymer.polymer.machine.api.compoment.IComponent
+import com.teampolymer.polymer.machine.api.compoment.ILazyComponent
 import java.util.function.Consumer
 
 abstract class AbstractCombinedComponent<T>(components: Array<out IComponent<T>>) :

@@ -1,6 +1,6 @@
 package com.teampolymer.polymer.machine.common.codegen
 
-import com.polymerteam.polymermachine.api.codegen.GenerateTemplate
+import com.teampolymer.polymer.machine.api.codegen.GenerateTemplate
 
 object DynamicClassManager {
     private val classes = mutableMapOf<String, ByteArray>()

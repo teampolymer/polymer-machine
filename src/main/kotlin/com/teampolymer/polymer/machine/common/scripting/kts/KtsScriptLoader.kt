@@ -1,15 +1,12 @@
 package com.teampolymer.polymer.machine.common.scripting.kts
 
-import com.polymerteam.polymermachine.common.scripting.util.forgeContextClasspath
+import com.teampolymer.polymer.machine.common.scripting.util.forgeContextClasspath
 import org.apache.logging.log4j.LogManager
 import java.nio.file.Path
 import java.nio.file.Paths
 import kotlin.io.path.createDirectories
 import kotlin.io.path.exists
-import kotlin.math.log
 import kotlin.script.experimental.api.ResultWithDiagnostics
-import kotlin.script.experimental.api.onSuccess
-import kotlin.script.experimental.api.plus
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvm.jvm
 import kotlin.script.experimental.jvm.updateClasspath

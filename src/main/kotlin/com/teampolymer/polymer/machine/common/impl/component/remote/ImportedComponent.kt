@@ -1,7 +1,7 @@
 package com.teampolymer.polymer.machine.common.impl.component.remote
 
-import com.polymerteam.polymermachine.api.capability.COMPONENT_HOLDER
-import com.polymerteam.polymermachine.api.compoment.IComponentType
+import com.teampolymer.polymer.machine.api.capability.COMPONENT_HOLDER
+import com.teampolymer.polymer.machine.api.compoment.IComponentType
 import net.minecraft.tileentity.TileEntity
 
 class ImportedComponent<T>(type: IComponentType<T>) : AbstractRemoteComponent<T>(type) {

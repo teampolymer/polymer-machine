@@ -107,7 +107,7 @@ class Graph(private val vertexNumber: Int) {
                     // subtract flow from reverse edge
                     // of current edge
                     adjacent[edge.v][edge.rev].flow -= tempFlow
-                    return tempFlow;
+                    return tempFlow
                 }
             }
             start[u]++

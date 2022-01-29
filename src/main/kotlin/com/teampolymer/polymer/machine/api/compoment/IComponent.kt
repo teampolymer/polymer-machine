@@ -1,6 +1,6 @@
 package com.teampolymer.polymer.machine.api.compoment
 
-import com.polymerteam.polymermachine.api.network.IComponentNetHandler
+import com.teampolymer.polymer.machine.api.network.IComponentNetHandler
 import net.minecraft.tileentity.TileEntity
 import java.util.function.Supplier
 

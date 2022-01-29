@@ -1,7 +1,7 @@
 package com.teampolymer.polymer.machine.common.recipe
 
-import com.polymerteam.polymermachine.api.recipe.IngredientWithAmount
-import com.polymerteam.polymermachine.common.utils.Graph
+import com.teampolymer.polymer.machine.api.recipe.IngredientWithAmount
+import com.teampolymer.polymer.machine.common.utils.Graph
 import net.minecraft.inventory.IInventory
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.ItemStack

@@ -1,7 +1,7 @@
 package com.teampolymer.polymer.machine.common.impl.component.item
 
-import com.polymerteam.polymermachine.api.compoment.IConcreteComponent
-import com.polymerteam.polymermachine.common.impl.component.common.AbstractComponent
+import com.teampolymer.polymer.machine.api.compoment.IConcreteComponent
+import com.teampolymer.polymer.machine.common.impl.component.common.AbstractComponent
 import net.minecraft.inventory.InventoryHelper
 import net.minecraft.nbt.CompoundNBT
 import net.minecraft.nbt.INBT
