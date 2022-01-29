@@ -1,10 +1,10 @@
 package com.teampolymer.polymer.machine
 
 import com.teampolymer.polymer.machine.api.PolymerMachineApi
-import com.polymerteam.polymermachine.api.capability.registerCapabilities
-import com.polymerteam.polymermachine.common.block.ModBlocks
-import com.polymerteam.polymermachine.common.item.ModItems
-import com.polymerteam.polymermachine.common.scripting.kts.KtsScriptLoader
+import com.teampolymer.polymer.machine.api.capability.registerCapabilities
+import com.teampolymer.polymer.machine.common.block.ModBlocks
+import com.teampolymer.polymer.machine.common.item.ModItems
+import com.teampolymer.polymer.machine.common.scripting.kts.KtsScriptLoader
 import net.minecraftforge.common.capabilities.Capability
 import net.minecraftforge.common.model.animation.CapabilityAnimation
 import net.minecraftforge.energy.CapabilityEnergy
@@ -23,7 +23,7 @@ import org.apache.logging.log4j.Logger
 import thedarkcolour.kotlinforforge.forge.FORGE_BUS
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
-@Mod(com.teampolymer.polymer.machine.api.PolymerMachineApi.MOD_ID)
+@Mod(PolymerMachineApi.MOD_ID)
 object PolymerMachine {
 
     private val LOG: Logger = LogManager.getLogger()
