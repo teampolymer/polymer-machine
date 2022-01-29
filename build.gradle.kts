@@ -47,7 +47,7 @@ println(
 configure<UserDevExtension> {
     mappings("official", "1.16.5")
 
-//    accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
+    accessTransformer(file("src/main/resources/META-INF/polymer_at.cfg"))
     runs {
         val runConfig = Action<RunConfig> {
             workingDirectory = project.file("run").canonicalPath
@@ -95,9 +95,6 @@ repositories {
         url = uri("https://thedarkcolour.github.io/KotlinForForge/")
     }
 
-    flatDir {
-        dir("libs")
-    }
 }
 
 dependencies {
@@ -120,8 +117,6 @@ dependencies {
 
 }
 
-
-// Example for how to get properties into the manifest for reading by the runtime..
 tasks.jar {
     manifest {
         val time = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date())
@@ -139,11 +134,8 @@ tasks.jar {
     }
 
 }
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
+
 tasks.jar {
     finalizedBy("reobfJar")
 }
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
 
