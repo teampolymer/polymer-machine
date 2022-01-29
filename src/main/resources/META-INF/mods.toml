@@ -2,7 +2,7 @@
 #loaderVersion="[36,)" 
 modLoader="kotlinforforge"
 # Change this if you require a certain version of KotlinForForge
-loaderVersion="[1.14, 2)"
+loaderVersion="[1.16, 2)"
 
 license="MIT"
 #issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
@@ -13,12 +13,11 @@ version="${file.jarVersion}"
 displayName="Polymer Machine" 
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-logoFile="examplemod.png" #optional
+#logoFile="examplemod.png" #optional
 credits="Thanks for this example mod goes to Java" #optional
 authors="WarmthDawn" #optional
 description='''
-Have some lorem ipsum.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sagittis luctus odio eu tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque volutpat ligula eget lacus auctor sagittis. In hac habitasse platea dictumst. Nunc gravida elit vitae sem vehicula efficitur. Donec mattis ipsum et arcu lobortis, eleifend sagittis sem rutrum. Cras pharetra quam eget posuere fermentum. Sed id tincidunt justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+No description
 '''
 
 [[dependencies.polymer-machine]] #optional

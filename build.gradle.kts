@@ -16,8 +16,8 @@ buildscript {
     }
 }
 plugins {
-    kotlin("jvm") version "1.5.21"
-    kotlin("plugin.serialization") version "1.5.21"
+    kotlin("jvm") version "1.5.31"
+    kotlin("plugin.serialization") version "1.5.31"
 }
 
 apply {
@@ -26,9 +26,9 @@ apply {
 
 
 
-version = "1.16.5-b1-1"
-group = "com.polymer-team.polymer-machine" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-//archivesBaseName = "polymer-machine"
+version = "1.16.5-1.1.0"
+group = "com.teampolymer"
+
 configure<BasePluginExtension> {
     archivesName.set("polymer-machine")
 }
@@ -51,15 +51,13 @@ configure<UserDevExtension> {
     runs {
         val runConfig = Action<RunConfig> {
             workingDirectory = project.file("run").canonicalPath
-            // Recommended logging data for a userdev environment
-            // The markers can be changed as needed.
             // "SCAN": For mods scan.
             // "REGISTRIES": For firing of registry events.
             // "REGISTRYDUMP": For getting the contents of all registries.
             property("forge.logging.markers", "REGISTRIES")
             property("forge.logging.console.level", "debug")
             mods {
-                create("polymermachine") {
+                create("polymer-machine") {
                     source(sourceSets["main"])
                 }
             }
@@ -69,10 +67,9 @@ configure<UserDevExtension> {
         create("server", runConfig)
         create("data") {
             runConfig(this)
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args(
                 "--mod",
-                "polymermachine",
+                "polymer-machine",
                 "--all",
                 "--output",
                 file("src/generated/resources/"),
@@ -103,7 +100,7 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     "minecraft"("net.minecraftforge:forge:1.16.5-36.2.20")
     // Use the latest version of KotlinForForge
-    implementation("thedarkcolour:kotlinforforge:1.14.0")
+    implementation("thedarkcolour:kotlinforforge:1.16.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.10")
 
     implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.6.10")
