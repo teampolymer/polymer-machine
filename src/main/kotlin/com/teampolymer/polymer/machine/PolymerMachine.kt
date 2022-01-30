@@ -4,7 +4,6 @@ import com.teampolymer.polymer.machine.api.PolymerMachineApi
 import com.teampolymer.polymer.machine.api.capability.registerCapabilities
 import com.teampolymer.polymer.machine.common.block.ModBlocks
 import com.teampolymer.polymer.machine.common.item.ModItems
-import com.teampolymer.polymer.machine.common.scripting.kts.KtsScriptLoader
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
@@ -33,7 +32,6 @@ object PolymerMachine {
         MOD_BUS.addListener(PolymerMachine::preInit)
         FORGE_BUS.addListener(PolymerMachine::onServerAboutToStart)
 
-        KtsScriptLoader().load()
     }
 
     fun processIMC(event: InterModProcessEvent) {
