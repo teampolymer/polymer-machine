@@ -18,16 +18,33 @@ buildscript {
 plugins {
     kotlin("jvm") version "1.5.31"
     kotlin("plugin.serialization") version "1.5.31"
+    id("pl.allegro.tech.build.axion-release") version "1.13.6"
+    `maven-publish`
 }
 
 apply {
     plugin("net.minecraftforge.gradle")
 }
 
+scmVersion {
+    tag(closureOf<pl.allegro.tech.build.axion.release.domain.TagNameSerializationConfig> {
+        prefix = "1.16.5-"
+    })
+    repository(closureOf<pl.allegro.tech.build.axion.release.domain.RepositoryConfig> {
+        directory = project.projectDir // repository location
+    })
 
+    repository(closureOf<pl.allegro.tech.build.axion.release.domain.RepositoryConfig> {
+        directory = project.projectDir // repository location
+    })
+    versionCreator = KotlinClosure2<String, pl.allegro.tech.build.axion.release.domain.scm.ScmPosition, String>(
+        { version, _ -> "1.16.5-$version" }
+    )
+}
 
-version = "1.16.5-1.1.0"
-group = "com.teampolymer"
+version = scmVersion.version
+//version = "1.16.5-1.1.0"
+group = "com.github.teampolymer"
 
 configure<BasePluginExtension> {
     archivesName.set("polymer-machine")
@@ -128,7 +145,17 @@ tasks.jar {
 
 }
 
-tasks.jar {
-    finalizedBy("reobfJar")
+if (project == project.rootProject) {
+    tasks.jar.get().finalizedBy("reobfJar")
+} else {
+    tasks.publish.get().finalizedBy("reobfJar")
+}
+
+publishing {
+    publications {
+        register("mavenJava", MavenPublication::class) {
+            artifact(tasks.jar.get())
+        }
+    }
 }
 
