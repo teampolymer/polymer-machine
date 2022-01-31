@@ -15,10 +15,9 @@ displayName="Polymer Machine"
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 #logoFile="examplemod.png" #optional
 credits="Thanks for this example mod goes to Java" #optional
-authors="WarmthDawn" #optional
+authors="TeamPolymer" #optional
 description='''
-No description
-'''
+自定义机器逻辑'''
 
 [[dependencies.polymer-machine]] #optional
     # the modid of the dependency
